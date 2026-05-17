@@ -1,2 +1,1 @@
-# OddsEdge
-FastAPI backend for ingesting sports odds, scoring picks, and serving a betting analytics API.
+OddsEdge is a backend-focused sports betting analytics project that ingests external odds data, tracks historical market movement, evaluates picks, and serves structured insights through a REST API.
