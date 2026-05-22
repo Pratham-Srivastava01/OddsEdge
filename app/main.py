@@ -1,7 +1,14 @@
 from fastapi import FastAPI
 from app.routers import health,games,picks,refresh
+from app.db.base import Base
+from app.db.session import engine
+from app.models.pick import Pick
+
+
 
 app=FastAPI()
+
+Base.metadata.create_all(bind=engine)
 
 @app.get("/")
 def root():

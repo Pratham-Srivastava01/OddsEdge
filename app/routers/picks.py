@@ -26,3 +26,11 @@ def get_pick(pick_id:int):
         if pick["id"]==pick_id:
             return {"pick": pick}
     return {"message": "Pick not found"}
+
+@router.delete("/{pick_id}")
+def delete_pick(pick_id:int):
+    for pick in picks_db:
+        if pick["id"]==pick_id:
+            picks_db.remove(pick)
+            return {"message": "Pick deleted"}
+    return {"message": "Pick not found"}
