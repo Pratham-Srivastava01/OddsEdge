@@ -12,3 +12,9 @@ class PickCreate(BaseModel):
     stake: float=Field(..., gt=0, description="Amount of money being wagered")
     confidence: int=Field(..., ge=1, le=10, description="Confidence level of the pick, 1-10")
     notes: Optional[str]=Field(default=None, max_length=250, description="Additional notes or reasoning behind the pick")
+
+class PickResponse(PickCreate):
+    id: int
+
+    class Config:
+        from_attributes = True
